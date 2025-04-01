@@ -26,7 +26,9 @@ pipeline {
         stage('Start Server') {
             steps {
                 script {
-                    bat 'npm run start'
+                    bat 'start /B npm run start'
+                    // Attendre un peu pour vérifier que le serveur démarre correctement
+                    bat 'timeout /T 10'
                 }
             }
         }
