@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/dev-ugo/budget-tracker-node'
+                git branch: 'main', url: 'https://github.com/dev-ugo/budget-tracker-node'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
         stage('Start Server') {
             steps {
                 script {
-                    sh 'nohup node server.js > server.log 2>&1 &'
+                    sh 'npm run start'
                 }
             }
         }
