@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        githubPush()  // Permet à Jenkins de se déclencher sur un push GitHub
+    }
     environment {
         MONGO_URI = credentials('MONGO_URI')
     }
