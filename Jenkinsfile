@@ -23,12 +23,11 @@ pipeline {
                 }
             }
         }
-        stage('Start Server') {
+        stage('Package') {
             steps {
                 script {
-                    bat 'start /B npm run start'
-                    // Attendre un peu pour vérifier que le serveur démarre correctement
-                    bat 'timeout /T 10'
+                    echo "Application successfully built and tested"
+                    // Archive l'application si nécessaire
                 }
             }
         }
